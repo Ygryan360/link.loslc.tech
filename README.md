@@ -10,36 +10,36 @@ Un service de raccourcissement d'URL moderne et élégant construit avec Laravel
 
 ## ✨ Fonctionnalités
 
-- 🔐 **Authentification sécurisée** - Système complet d'inscription/connexion
-- ⚡ **Interface temps réel** - Gestion des liens avec Livewire (sans rechargement de page)
-- 🎨 **Design moderne** - Interface utilisateur élégante avec TailwindCSS et Flux
-- 📊 **Tableau de bord** - Vue d'ensemble de vos liens
-- 🔒 **Liens privés** - Chaque utilisateur gère ses propres liens
-- ✅ **Validation avancée** - Vérification des URLs et unicité des endpoints
-- 📱 **Responsive** - Compatible mobile et desktop
+-   🔐 **Authentification sécurisée** - Système complet d'inscription/connexion
+-   ⚡ **Interface temps réel** - Gestion des liens avec Livewire (sans rechargement de page)
+-   🎨 **Design moderne** - Interface utilisateur élégante avec TailwindCSS et Flux
+-   📊 **Tableau de bord** - Vue d'ensemble de vos liens
+-   🔒 **Liens privés** - Chaque utilisateur gère ses propres liens
+-   ✅ **Validation avancée** - Vérification des URLs et unicité des endpoints
+-   📱 **Responsive** - Compatible mobile et desktop
 
 ## 🛠️ Technologies utilisées
 
-- **Backend**: Laravel 12
-- **Frontend**: Livewire 3 + Flux UI + TailwindCSS 4
-- **Base de données**: Compatible MySQL/PostgreSQL/SQLite
-- **Build tools**: Vite 6
-- **Authentification**: Laravel Breeze
+-   **Backend**: Laravel 12
+-   **Frontend**: Livewire 3 + Flux UI + TailwindCSS 4
+-   **Base de données**: Compatible MySQL/PostgreSQL/SQLite
+-   **Build tools**: Vite 6
+-   **Authentification**: Laravel Breeze
 
 ## 📋 Prérequis
 
-- PHP 8.2 ou supérieur
-- Composer
-- Node.js et npm/yarn/bun
-- Base de données (MySQL, PostgreSQL ou SQLite)
+-   PHP 8.2 ou supérieur
+-   Composer
+-   Node.js et npm/yarn/bun
+-   Base de données (MySQL, PostgreSQL ou SQLite)
 
 ## 🚀 Installation
 
 ### 1. Cloner le projet
 
 ```bash
-git clone https://github.com/votre-username/loslc-links.git
-cd loslc-links
+git clone https://github.com/loslc/link.loslc.tech.git
+cd link.loslc.tech
 ```
 
 ### 2. Installer les dépendances PHP
@@ -112,15 +112,16 @@ L'application sera accessible à l'adresse : `http://localhost:8000`
 1. Connectez-vous à votre compte
 2. Accédez à la section "Links"
 3. Remplissez le formulaire :
-   - **Endpoint** : Le nom court de votre lien (ex: `mon-site`)
-   - **Target** : L'URL complète de destination
+    - **Endpoint** : Le nom court de votre lien (ex: `mon-site`)
+    - **Target** : L'URL complète de destination
 4. Cliquez sur "Créer le lien"
 
 ### Utiliser un lien raccourci
 
 Votre lien sera accessible à l'adresse :
+
 ```
-https://votre-domaine.com/mon-site
+https://link.loslc.tech
 ```
 
 ## 🏗️ Structure du projet
@@ -151,29 +152,7 @@ routes/
 └── auth.php            # Routes d'authentification
 ```
 
-## 🧪 Tests
-
-Lancer la suite de tests :
-
-```bash
-php artisan test
-```
-
-Lancer des tests spécifiques :
-
-```bash
-# Tests des fonctionnalités
-php artisan test --testsuite=Feature
-
-# Tests unitaires
-php artisan test --testsuite=Unit
-```
-
 ## 🔧 Configuration avancée
-
-### Personnalisation du domaine
-
-Pour utiliser un domaine personnalisé, configurez votre serveur web et mettez à jour la variable `APP_URL` dans votre fichier `.env`.
 
 ### Cache et performance
 
@@ -211,25 +190,21 @@ Les contributions sont les bienvenues ! Pour contribuer :
 4. Poussez vers la branche (`git push origin feature/AmazingFeature`)
 5. Ouvrez une Pull Request
 
-## 📝 Licence
-
-Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
-
 ## 🆘 Support
 
 Si vous rencontrez des problèmes ou avez des questions :
 
-- Ouvrez une [issue](https://github.com/votre-username/loslc-links/issues)
-- Consultez la [documentation Laravel](https://laravel.com/docs)
-- Consultez la [documentation Livewire](https://livewire.laravel.com/docs)
+-   Ouvrez une [issue](https://github.com/loslc/link.loslc.tech/issues)
+-   Consultez la [documentation Laravel](https://laravel.com/docs)
+-   Consultez la [documentation Livewire](https://livewire.laravel.com/docs)
 
 ## 🙏 Remerciements
 
-- [Laravel](https://laravel.com) pour le framework PHP exceptionnel
-- [Livewire](https://livewire.laravel.com) pour la réactivité frontend
-- [TailwindCSS](https://tailwindcss.com) pour le framework CSS
-- [Flux](https://fluxui.dev) pour les composants UI
+-   [Laravel](https://laravel.com) pour le framework PHP exceptionnel
+-   [Livewire](https://livewire.laravel.com) pour la réactivité frontend
+-   [TailwindCSS](https://tailwindcss.com) pour le framework CSS
+-   [Flux](https://fluxui.dev) pour les composants UI
 
 ---
 
-**Développé avec ❤️ par [Votre Nom]**
+**Développé avec ❤️ par la team LOSL-C**
