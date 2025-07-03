@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 use App\Http\Controllers\LinkController;
 
+require __DIR__ . '/auth.php';
+
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
@@ -24,5 +26,3 @@ Route::middleware(['auth'])->group(function () {
 Route::get('{endpoint}', [LinkController::class, 'redirect'])
     ->where('endpoint', '[a-zA-Z0-9\-]+')
     ->name('link.redirect');
-
-require __DIR__ . '/auth.php';
