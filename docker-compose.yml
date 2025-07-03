@@ -1,0 +1,82 @@
+version: "3.8"
+
+services:
+    # Application Laravel
+    app:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: loslc-links
+        container_name: loslc-links-app
+        restart: unless-stopped
+        working_dir: /var/www/html
+        volumes:
+            - ./storage:/var/www/html/storage
+            - ./bootstrap/cache:/var/www/html/bootstrap/cache
+        ports:
+            - "8000:80"
+        environment:
+            - APP_ENV=production
+            - APP_DEBUG=false
+            - DB_CONNECTION=mysql
+            - DB_HOST=db
+            - DB_PORT=3306
+            - DB_DATABASE=loslc_links
+            - DB_USERNAME=laravel
+            - DB_PASSWORD=secret
+        depends_on:
+            - db
+            - redis
+        networks:
+            - loslc-network
+
+    # Base de données MySQL
+    db:
+        image: mysql:8.0
+        container_name: loslc-links-db
+        restart: unless-stopped
+        environment:
+            MYSQL_DATABASE: loslc_links
+            MYSQL_USER: laravel
+            MYSQL_PASSWORD: secret
+            MYSQL_ROOT_PASSWORD: rootsecret
+        volumes:
+            - mysql_data:/var/lib/mysql
+        ports:
+            - "3306:3306"
+        networks:
+            - loslc-network
+
+    # Redis pour le cache et les sessions
+    redis:
+        image: redis:7-alpine
+        container_name: loslc-links-redis
+        restart: unless-stopped
+        ports:
+            - "6379:6379"
+        networks:
+            - loslc-network
+
+    # phpMyAdmin pour la gestion de la base de données
+    phpmyadmin:
+        image: phpmyadmin:latest
+        container_name: loslc-links-phpmyadmin
+        restart: unless-stopped
+        environment:
+            PMA_HOST: db
+            PMA_PORT: 3306
+            PMA_USER: laravel
+            PMA_PASSWORD: secret
+        ports:
+            - "8080:80"
+        depends_on:
+            - db
+        networks:
+            - loslc-network
+
+volumes:
+    mysql_data:
+
+networks:
+    loslc-network:
+        driver: bridge
